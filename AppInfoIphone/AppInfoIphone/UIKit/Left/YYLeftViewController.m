@@ -7,9 +7,10 @@
 //
 
 #import "YYLeftViewController.h"
-
+NSString * const kViewController = @"kViewController";
+NSString * const kViewControllerTitle = @"kViewControllerTitle";
 @interface YYLeftViewController ()
-@property (nonatomic,strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation YYLeftViewController
@@ -18,9 +19,32 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.dataSource = [NSMutableArray arrayWithObjects:@"首页",@"娱乐", nil];
+     
     }
     return self;
+}
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.dataSource = [NSMutableArray array];
+        [self initCenterViewControllers];
+    }
+    return self;
+}
+- (void)initCenterViewControllers
+{
+    YYBestViewController *best = [[YYBestViewController alloc] init];
+    best.title = @"精品推荐";
+    UINavigationController *bestNav = [[UINavigationController alloc] initWithRootViewController:best];
+    NSDictionary *bestdic =[NSDictionary dictionaryWithObjectsAndKeys:bestNav,kViewController,@"首页",kViewControllerTitle, nil];
+    [self.dataSource addObject:bestdic];
+    
+    YYBangViewController *bang = [[YYBangViewController alloc] init];
+    bang.title = @"排行榜";
+    UINavigationController *bangNav = [[UINavigationController alloc] initWithRootViewController:bang];
+    NSDictionary *bangdic =[NSDictionary dictionaryWithObjectsAndKeys:bangNav,kViewController,@"排行榜",kViewControllerTitle, nil];
+    [self.dataSource addObject:bangdic];
 }
 -(void)handleData
 {
@@ -41,6 +65,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.navigationBar.tintColor = RGBCOLOR(230, 230, 230);
     self.view.backgroundColor = RGBCOLOR(230, 230, 230);
@@ -67,24 +92,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"userlist";
+    static NSString *CellIdentifier = @"left";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
     if (cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    NSString *str = self.dataSource[indexPath.row];
+    NSDictionary *controllerDic = self.dataSource[indexPath.row];
     cell.textLabel.textColor=  [UIColor grayColor];
     cell.textLabel.font = [UIFont systemFontOfSize:16];
-    cell.textLabel.text = str;
+    cell.textLabel.text = controllerDic[kViewControllerTitle];
 
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(YYLeftViewController:didSelectIndexPath:)]) {
-        [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath];
+    if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(YYLeftViewController:didSelectIndexPath:withController:)]) {
+        NSDictionary *controllerDic = self.dataSource[indexPath.row];
+        UIViewController *controller = controllerDic[kViewController];
+        [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath withController:controller];
     }
 }
 - (void)didReceiveMemoryWarning

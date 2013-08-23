@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YYBestViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) UITableView *tableView;
+@interface YYBestViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
+
 
 @end

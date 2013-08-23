@@ -22,7 +22,22 @@
     }
     return self;
 }
-
+-(void)handleData
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"h:mm:ss"];
+    NSString *lastUpdated = [NSString stringWithFormat:@"上次更新 %@", [formatter stringFromDate:[NSDate date]]];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+    [self.refreshControl endRefreshing];
+    [self.tableView reloadData];
+}
+-(void)refreshView:(UIRefreshControl *)refresh
+{
+    if (refresh.refreshing) {
+        refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"刷新中..."];
+        [self performSelector:@selector(handleData) withObject:nil afterDelay:2];
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,13 +52,12 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleLabel;
-    
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.tableView];
-    
+
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.tintColor = [UIColor lightGrayColor];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"] ;
+    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
 	// Do any additional setup after loading the view.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -53,7 +67,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"userlist";
+    static NSString *CellIdentifier = @"best";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
     if (cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
