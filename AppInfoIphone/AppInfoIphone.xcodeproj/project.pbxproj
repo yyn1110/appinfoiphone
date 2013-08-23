@@ -57,6 +57,7 @@
 		0CCB3F1E17C744C60000D7A0 /* UINavigationBar+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F1317C744C60000D7A0 /* UINavigationBar+Utils.m */; };
 		0CCB3F1F17C744C60000D7A0 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F1517C744C60000D7A0 /* UIView+Screenshot.m */; };
 		0CCB3F2517C7450D0000D7A0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F2317C7450D0000D7A0 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0CCB3F2817C749E90000D7A0 /* YYRoomListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +155,8 @@
 		0CCB3F2217C7450D0000D7A0 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		0CCB3F2317C7450D0000D7A0 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		0CCB3F2417C7450D0000D7A0 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		0CCB3F2617C749E80000D7A0 /* YYRoomListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRoomListRequest.h; sourceTree = "<group>"; };
+		0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRoomListRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +376,8 @@
 				0CCB3EF417C7429F0000D7A0 /* KXBaseFormDataRequest.m */,
 				0CCB3EF517C7429F0000D7A0 /* KXBaseRequest.h */,
 				0CCB3EF617C7429F0000D7A0 /* KXBaseRequest.m */,
+				0CCB3F2617C749E80000D7A0 /* YYRoomListRequest.h */,
+				0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				0CCB3F1E17C744C60000D7A0 /* UINavigationBar+Utils.m in Sources */,
 				0CCB3F1F17C744C60000D7A0 /* UIView+Screenshot.m in Sources */,
 				0CCB3F2517C7450D0000D7A0 /* GTMBase64.m in Sources */,
+				0CCB3F2817C749E90000D7A0 /* YYRoomListRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
