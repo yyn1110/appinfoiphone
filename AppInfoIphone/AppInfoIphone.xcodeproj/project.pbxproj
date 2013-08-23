@@ -21,10 +21,10 @@
 		0CCB3E7617C70C5C0000D7A0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7117C70C5C0000D7A0 /* MMDrawerVisualState.m */; };
 		0CCB3E7717C70C5C0000D7A0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7317C70C5C0000D7A0 /* UIViewController+MMDrawerController.m */; };
 		0CCB3E7917C70C7B0000D7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB3E7817C70C7B0000D7A0 /* QuartzCore.framework */; };
-		0CCB3E7C17C70CC90000D7A0 /* YYLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */; };
-		0CCB3E7F17C70CD50000D7A0 /* YYRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */; };
-		0CCB3E9317C7170D0000D7A0 /* YYBestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */; };
-		0CCB3E9617C717170000D7A0 /* YYBangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9517C717170000D7A0 /* YYBangViewController.m */; };
+		0CCB3E9A17C730AC0000D7A0 /* YYLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9917C730AC0000D7A0 /* YYLeftViewController.m */; };
+		0CCB3EA017C730B60000D7A0 /* YYBangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9D17C730B60000D7A0 /* YYBangViewController.m */; };
+		0CCB3EA117C730B60000D7A0 /* YYBestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9F17C730B60000D7A0 /* YYBestViewController.m */; };
+		0CCB3EA517C730BC0000D7A0 /* YYRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3EA417C730BC0000D7A0 /* YYRightViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,15 +50,15 @@
 		0CCB3E7217C70C5C0000D7A0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		0CCB3E7317C70C5C0000D7A0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		0CCB3E7817C70C7B0000D7A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0CCB3E7A17C70CC90000D7A0 /* YYLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLeftViewController.h; sourceTree = "<group>"; };
-		0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLeftViewController.m; sourceTree = "<group>"; };
-		0CCB3E7D17C70CD40000D7A0 /* YYRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRightViewController.h; sourceTree = "<group>"; };
-		0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRightViewController.m; sourceTree = "<group>"; };
 		0CCB3E8917C713750000D7A0 /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefine.h; sourceTree = "<group>"; };
-		0CCB3E9117C7170D0000D7A0 /* YYBestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBestViewController.h; sourceTree = "<group>"; };
-		0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBestViewController.m; sourceTree = "<group>"; };
-		0CCB3E9417C717170000D7A0 /* YYBangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBangViewController.h; sourceTree = "<group>"; };
-		0CCB3E9517C717170000D7A0 /* YYBangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBangViewController.m; sourceTree = "<group>"; };
+		0CCB3E9817C730AC0000D7A0 /* YYLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLeftViewController.h; sourceTree = "<group>"; };
+		0CCB3E9917C730AC0000D7A0 /* YYLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLeftViewController.m; sourceTree = "<group>"; };
+		0CCB3E9C17C730B60000D7A0 /* YYBangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBangViewController.h; sourceTree = "<group>"; };
+		0CCB3E9D17C730B60000D7A0 /* YYBangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBangViewController.m; sourceTree = "<group>"; };
+		0CCB3E9E17C730B60000D7A0 /* YYBestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBestViewController.h; sourceTree = "<group>"; };
+		0CCB3E9F17C730B60000D7A0 /* YYBestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBestViewController.m; sourceTree = "<group>"; };
+		0CCB3EA317C730BC0000D7A0 /* YYRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRightViewController.h; sourceTree = "<group>"; };
+		0CCB3EA417C730BC0000D7A0 /* YYRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRightViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,14 +108,12 @@
 		0CCB3E5317C708E80000D7A0 /* AppInfoIphone */ = {
 			isa = PBXGroup;
 			children = (
-				0CCB3E8A17C715930000D7A0 /* center */,
+				0CCB3E9717C730AC0000D7A0 /* Left */,
+				0CCB3E9B17C730B60000D7A0 /* Center */,
+				0CCB3EA217C730BC0000D7A0 /* Right */,
 				0CCB3E5C17C708E80000D7A0 /* YYAppDelegate.h */,
 				0CCB3E5D17C708E80000D7A0 /* YYAppDelegate.m */,
 				0CCB3E5417C708E80000D7A0 /* Supporting Files */,
-				0CCB3E7A17C70CC90000D7A0 /* YYLeftViewController.h */,
-				0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */,
-				0CCB3E7D17C70CD40000D7A0 /* YYRightViewController.h */,
-				0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */,
 			);
 			path = AppInfoIphone;
 			sourceTree = "<group>";
@@ -166,15 +164,33 @@
 			path = YYMacroDefine;
 			sourceTree = "<group>";
 		};
-		0CCB3E8A17C715930000D7A0 /* center */ = {
+		0CCB3E9717C730AC0000D7A0 /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				0CCB3E9117C7170D0000D7A0 /* YYBestViewController.h */,
-				0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */,
-				0CCB3E9417C717170000D7A0 /* YYBangViewController.h */,
-				0CCB3E9517C717170000D7A0 /* YYBangViewController.m */,
+				0CCB3E9817C730AC0000D7A0 /* YYLeftViewController.h */,
+				0CCB3E9917C730AC0000D7A0 /* YYLeftViewController.m */,
 			);
-			name = center;
+			path = Left;
+			sourceTree = "<group>";
+		};
+		0CCB3E9B17C730B60000D7A0 /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3E9C17C730B60000D7A0 /* YYBangViewController.h */,
+				0CCB3E9D17C730B60000D7A0 /* YYBangViewController.m */,
+				0CCB3E9E17C730B60000D7A0 /* YYBestViewController.h */,
+				0CCB3E9F17C730B60000D7A0 /* YYBestViewController.m */,
+			);
+			path = Center;
+			sourceTree = "<group>";
+		};
+		0CCB3EA217C730BC0000D7A0 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3EA317C730BC0000D7A0 /* YYRightViewController.h */,
+				0CCB3EA417C730BC0000D7A0 /* YYRightViewController.m */,
+			);
+			path = Right;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,10 +265,10 @@
 				0CCB3E7517C70C5C0000D7A0 /* MMDrawerController.m in Sources */,
 				0CCB3E7617C70C5C0000D7A0 /* MMDrawerVisualState.m in Sources */,
 				0CCB3E7717C70C5C0000D7A0 /* UIViewController+MMDrawerController.m in Sources */,
-				0CCB3E7C17C70CC90000D7A0 /* YYLeftViewController.m in Sources */,
-				0CCB3E7F17C70CD50000D7A0 /* YYRightViewController.m in Sources */,
-				0CCB3E9317C7170D0000D7A0 /* YYBestViewController.m in Sources */,
-				0CCB3E9617C717170000D7A0 /* YYBangViewController.m in Sources */,
+				0CCB3E9A17C730AC0000D7A0 /* YYLeftViewController.m in Sources */,
+				0CCB3EA017C730B60000D7A0 /* YYBangViewController.m in Sources */,
+				0CCB3EA117C730B60000D7A0 /* YYBestViewController.m in Sources */,
+				0CCB3EA517C730BC0000D7A0 /* YYRightViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
