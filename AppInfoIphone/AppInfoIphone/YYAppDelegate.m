@@ -9,16 +9,50 @@
 #import "YYAppDelegate.h"
 
 @implementation YYAppDelegate
-
+- (void)initCenterViewControllers
+{
+    YYBestViewController *best = [[YYBestViewController alloc] init];
+    best.title = @"精品推荐";
+    UINavigationController *bestNav = [[UINavigationController alloc] initWithRootViewController:best];
+    [self.viewControllers addObject:bestNav];
+    
+    YYBangViewController *bang = [[YYBangViewController alloc] init];
+    bang.title = @"榜";
+    UINavigationController *bangNav = [[UINavigationController alloc] initWithRootViewController:bang];
+    [self.viewControllers addObject:bangNav];
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    self.viewControllers = [NSMutableArray array];
+    [self initCenterViewControllers];
+    YYLeftViewController *left = [[YYLeftViewController alloc] init];
+    left.delegate = self;
+    UINavigationController *leftNav = [[UINavigationController alloc] initWithRootViewController:left];
+    YYRightViewController *right = [[YYRightViewController alloc] init];
+    UINavigationController *rightNav = [[UINavigationController alloc] initWithRootViewController:right];
+    
+
+    
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:self.viewControllers[0] leftDrawerViewController:leftNav rightDrawerViewController:rightNav];
+    self.drawerController.showsShadow = YES;
+    self.drawerController.shouldStretchDrawer = NO;
+    [self.drawerController setMaximumLeftDrawerWidth:150];
+    [self.drawerController setMaximumRightDrawerWidth:150.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+   
+    self.window.rootViewController = self.drawerController;
     return YES;
 }
-
+- (void)YYLeftViewController:(YYLeftViewController *)left didSelectIndexPath:(NSIndexPath *)path
+{
+    [self.drawerController setCenterViewController:self.viewControllers[path.row] withCloseAnimation:YES completion:^(BOOL finished) {
+        
+    }];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

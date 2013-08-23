@@ -16,6 +16,15 @@
 		0CCB3E6017C708E80000D7A0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB3E5F17C708E80000D7A0 /* Default.png */; };
 		0CCB3E6217C708E80000D7A0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB3E6117C708E80000D7A0 /* Default@2x.png */; };
 		0CCB3E6417C708E80000D7A0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB3E6317C708E80000D7A0 /* Default-568h@2x.png */; };
+		0CCB3E7417C70C5C0000D7A0 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E6D17C70C5C0000D7A0 /* MMDrawerBarButtonItem.m */; };
+		0CCB3E7517C70C5C0000D7A0 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E6F17C70C5C0000D7A0 /* MMDrawerController.m */; };
+		0CCB3E7617C70C5C0000D7A0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7117C70C5C0000D7A0 /* MMDrawerVisualState.m */; };
+		0CCB3E7717C70C5C0000D7A0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7317C70C5C0000D7A0 /* UIViewController+MMDrawerController.m */; };
+		0CCB3E7917C70C7B0000D7A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB3E7817C70C7B0000D7A0 /* QuartzCore.framework */; };
+		0CCB3E7C17C70CC90000D7A0 /* YYLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */; };
+		0CCB3E7F17C70CD50000D7A0 /* YYRightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */; };
+		0CCB3E9317C7170D0000D7A0 /* YYBestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */; };
+		0CCB3E9617C717170000D7A0 /* YYBangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3E9517C717170000D7A0 /* YYBangViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,24 @@
 		0CCB3E5F17C708E80000D7A0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0CCB3E6117C708E80000D7A0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0CCB3E6317C708E80000D7A0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0CCB3E6C17C70C5C0000D7A0 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		0CCB3E6D17C70C5C0000D7A0 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		0CCB3E6E17C70C5C0000D7A0 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		0CCB3E6F17C70C5C0000D7A0 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		0CCB3E7017C70C5C0000D7A0 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		0CCB3E7117C70C5C0000D7A0 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		0CCB3E7217C70C5C0000D7A0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		0CCB3E7317C70C5C0000D7A0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		0CCB3E7817C70C7B0000D7A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0CCB3E7A17C70CC90000D7A0 /* YYLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLeftViewController.h; sourceTree = "<group>"; };
+		0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLeftViewController.m; sourceTree = "<group>"; };
+		0CCB3E7D17C70CD40000D7A0 /* YYRightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRightViewController.h; sourceTree = "<group>"; };
+		0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRightViewController.m; sourceTree = "<group>"; };
+		0CCB3E8917C713750000D7A0 /* MacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefine.h; sourceTree = "<group>"; };
+		0CCB3E9117C7170D0000D7A0 /* YYBestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBestViewController.h; sourceTree = "<group>"; };
+		0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBestViewController.m; sourceTree = "<group>"; };
+		0CCB3E9417C717170000D7A0 /* YYBangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBangViewController.h; sourceTree = "<group>"; };
+		0CCB3E9517C717170000D7A0 /* YYBangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBangViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCB3E7917C70C7B0000D7A0 /* QuartzCore.framework in Frameworks */,
 				0CCB3E4E17C708E80000D7A0 /* UIKit.framework in Frameworks */,
 				0CCB3E5017C708E80000D7A0 /* Foundation.framework in Frameworks */,
 				0CCB3E5217C708E80000D7A0 /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +79,7 @@
 		0CCB3E4117C708E80000D7A0 = {
 			isa = PBXGroup;
 			children = (
+				0CCB3E6A17C70C490000D7A0 /* Externals */,
 				0CCB3E5317C708E80000D7A0 /* AppInfoIphone */,
 				0CCB3E4C17C708E80000D7A0 /* Frameworks */,
 				0CCB3E4B17C708E80000D7A0 /* Products */,
@@ -68,6 +97,7 @@
 		0CCB3E4C17C708E80000D7A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CCB3E7817C70C7B0000D7A0 /* QuartzCore.framework */,
 				0CCB3E4D17C708E80000D7A0 /* UIKit.framework */,
 				0CCB3E4F17C708E80000D7A0 /* Foundation.framework */,
 				0CCB3E5117C708E80000D7A0 /* CoreGraphics.framework */,
@@ -78,9 +108,14 @@
 		0CCB3E5317C708E80000D7A0 /* AppInfoIphone */ = {
 			isa = PBXGroup;
 			children = (
+				0CCB3E8A17C715930000D7A0 /* center */,
 				0CCB3E5C17C708E80000D7A0 /* YYAppDelegate.h */,
 				0CCB3E5D17C708E80000D7A0 /* YYAppDelegate.m */,
 				0CCB3E5417C708E80000D7A0 /* Supporting Files */,
+				0CCB3E7A17C70CC90000D7A0 /* YYLeftViewController.h */,
+				0CCB3E7B17C70CC90000D7A0 /* YYLeftViewController.m */,
+				0CCB3E7D17C70CD40000D7A0 /* YYRightViewController.h */,
+				0CCB3E7E17C70CD40000D7A0 /* YYRightViewController.m */,
 			);
 			path = AppInfoIphone;
 			sourceTree = "<group>";
@@ -97,6 +132,49 @@
 				0CCB3E6317C708E80000D7A0 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CCB3E6A17C70C490000D7A0 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3E8817C7136D0000D7A0 /* YYMacroDefine */,
+				0CCB3E6B17C70C5C0000D7A0 /* MMDrawerController */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		0CCB3E6B17C70C5C0000D7A0 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3E6C17C70C5C0000D7A0 /* MMDrawerBarButtonItem.h */,
+				0CCB3E6D17C70C5C0000D7A0 /* MMDrawerBarButtonItem.m */,
+				0CCB3E6E17C70C5C0000D7A0 /* MMDrawerController.h */,
+				0CCB3E6F17C70C5C0000D7A0 /* MMDrawerController.m */,
+				0CCB3E7017C70C5C0000D7A0 /* MMDrawerVisualState.h */,
+				0CCB3E7117C70C5C0000D7A0 /* MMDrawerVisualState.m */,
+				0CCB3E7217C70C5C0000D7A0 /* UIViewController+MMDrawerController.h */,
+				0CCB3E7317C70C5C0000D7A0 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		0CCB3E8817C7136D0000D7A0 /* YYMacroDefine */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3E8917C713750000D7A0 /* MacroDefine.h */,
+			);
+			path = YYMacroDefine;
+			sourceTree = "<group>";
+		};
+		0CCB3E8A17C715930000D7A0 /* center */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB3E9117C7170D0000D7A0 /* YYBestViewController.h */,
+				0CCB3E9217C7170D0000D7A0 /* YYBestViewController.m */,
+				0CCB3E9417C717170000D7A0 /* YYBangViewController.h */,
+				0CCB3E9517C717170000D7A0 /* YYBangViewController.m */,
+			);
+			name = center;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +245,14 @@
 			files = (
 				0CCB3E5A17C708E80000D7A0 /* main.m in Sources */,
 				0CCB3E5E17C708E80000D7A0 /* YYAppDelegate.m in Sources */,
+				0CCB3E7417C70C5C0000D7A0 /* MMDrawerBarButtonItem.m in Sources */,
+				0CCB3E7517C70C5C0000D7A0 /* MMDrawerController.m in Sources */,
+				0CCB3E7617C70C5C0000D7A0 /* MMDrawerVisualState.m in Sources */,
+				0CCB3E7717C70C5C0000D7A0 /* UIViewController+MMDrawerController.m in Sources */,
+				0CCB3E7C17C70CC90000D7A0 /* YYLeftViewController.m in Sources */,
+				0CCB3E7F17C70CD50000D7A0 /* YYRightViewController.m in Sources */,
+				0CCB3E9317C7170D0000D7A0 /* YYBestViewController.m in Sources */,
+				0CCB3E9617C717170000D7A0 /* YYBangViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +367,7 @@
 				0CCB3E6917C708E80000D7A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
