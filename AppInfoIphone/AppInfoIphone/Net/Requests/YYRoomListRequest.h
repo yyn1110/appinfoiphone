@@ -7,7 +7,7 @@
 //
 
 #import "KXBaseFormDataRequest.h"
-
+#import "RoomListEntity.h"
 @interface YYRoomListRequest : KXBaseFormDataRequest
-
++(id)requestWithUID:(NSNumber *)uid;
 @end

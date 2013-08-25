@@ -9,7 +9,7 @@
 #import "YYBestViewController.h"
 
 @interface YYBestViewController ()
-@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) NSArray *dataSource;
 @end
 
 @implementation YYBestViewController
@@ -18,14 +18,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.dataSource = [NSMutableArray arrayWithObjects:@"首页",@"娱乐", nil];
+       // self.dataSource = [NSArray arrayWithObjects:@"首页",@"娱乐", nil];
     }
     return self;
 }
 -(void)handleData
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"h:mm:ss"];
+    [formatter setDateFormat:@"hh:mm:ss"];
     NSString *lastUpdated = [NSString stringWithFormat:@"上次更新 %@", [formatter stringFromDate:[NSDate date]]];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
     [self.refreshControl endRefreshing];
@@ -35,7 +35,7 @@
 {
     if (refresh.refreshing) {
         refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"刷新中..."];
-        [self performSelector:@selector(handleData) withObject:nil afterDelay:2];
+
     }
 }
 - (void)viewDidLoad
@@ -58,8 +58,10 @@
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"] ;
     [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
-	// Do any additional setup after loading the view.
+
+
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataSource.count;
@@ -73,9 +75,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    NSString *str = self.dataSource[indexPath.row];
     cell.textLabel.textColor=  [UIColor grayColor];
     cell.textLabel.font = [UIFont systemFontOfSize:16];
+    NSDictionary *dic = self.dataSource[indexPath.row];
+    NSString *str = [NSString stringWithFormat:@"%@",dic[@"Name"]];
     cell.textLabel.text = str;
     
     return cell;

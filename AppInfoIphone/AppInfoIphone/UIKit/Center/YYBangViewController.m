@@ -37,7 +37,6 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleLabel;
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title image:nil tag:1];
 	// Do any additional setup after loading the view.
 }
 

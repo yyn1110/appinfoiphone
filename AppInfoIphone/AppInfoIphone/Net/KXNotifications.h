@@ -9,3 +9,4 @@
 
 extern NSString * const KXNetworkManagerDidFailLoginNotification;
 extern NSString * const KXNetworkManagerDidFailWithErrorNotification;
+extern NSString * const KXRoomListNotification;

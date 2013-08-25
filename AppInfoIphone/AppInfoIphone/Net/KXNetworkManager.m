@@ -81,7 +81,7 @@
 
 - (void)requestWentWrong:(ASIHTTPRequest *)request
 {
-
+DLog(@" requestWentWrong = %@",request.responseString);
     NSError *error = [request error];
     [self notifyError:error];
 }
@@ -109,4 +109,14 @@
                                                         userInfo:userInfo];
     [[NSNotificationCenter defaultCenter] postNotification:notif];
 }
+
+
+- (void)requestWithUID:(NSNumber *)uid
+{
+    id request = [YYRoomListRequest requestWithUID:uid];
+    [self.networkQueue addOperation:request];
+}
+
+
+
 @end

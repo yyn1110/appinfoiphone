@@ -27,29 +27,17 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
 {
     self = [super init];
     if (self) {
-        self.dataSource = [NSMutableArray array];
-        [self initCenterViewControllers];
+
+      //  self.dataSource = [NSDictionary dictionary];
+
     }
     return self;
 }
-- (void)initCenterViewControllers
-{
-    YYBestViewController *best = [[YYBestViewController alloc] init];
-    best.title = @"精品推荐";
-    UINavigationController *bestNav = [[UINavigationController alloc] initWithRootViewController:best];
-    NSDictionary *bestdic =[NSDictionary dictionaryWithObjectsAndKeys:bestNav,kViewController,@"首页",kViewControllerTitle, nil];
-    [self.dataSource addObject:bestdic];
-    
-    YYBangViewController *bang = [[YYBangViewController alloc] init];
-    bang.title = @"排行榜";
-    UINavigationController *bangNav = [[UINavigationController alloc] initWithRootViewController:bang];
-    NSDictionary *bangdic =[NSDictionary dictionaryWithObjectsAndKeys:bangNav,kViewController,@"排行榜",kViewControllerTitle, nil];
-    [self.dataSource addObject:bangdic];
-}
+
 -(void)handleData
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"h:mm:ss"];
+    [formatter setDateFormat:@"hh:mm:ss"];
     NSString *lastUpdated = [NSString stringWithFormat:@"上次更新 %@", [formatter stringFromDate:[NSDate date]]];
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];    
     [self.refreshControl endRefreshing];
@@ -59,13 +47,13 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
 {
     if (refresh.refreshing) {
         refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"刷新中..."];
-        [self performSelector:@selector(handleData) withObject:nil afterDelay:2];
+          [[KXNetworkManager sharedKXNetworkManager] requestWithUID:@(100)]; 
+       // [self performSelector:@selector(handleData) withObject:nil afterDelay:2];
     }
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self.navigationController.navigationBar setHidden:NO];
     self.navigationController.navigationBar.tintColor = RGBCOLOR(230, 230, 230);
     self.view.backgroundColor = RGBCOLOR(230, 230, 230);
@@ -82,14 +70,49 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"] ;
     [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
-
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RoomList:) name:KXRoomListNotification object:nil];
+      [[KXNetworkManager sharedKXNetworkManager] requestWithUID:@(100)];
 	// Do any additional setup after loading the view.
+}
+- (void)RoomList:(NSNotification *)notification
+{
+    RoomListEntity *entity = notification.object;
+    if (entity.resultCode == 1) {
+        
+        self.dataSource = entity.Results;
+      //  [self.tableView reloadData];
+        [self performSelector:@selector(handleData) withObject:nil afterDelay:1];
+    }
+    
+    
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return   self.dataSource.allKeys.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataSource.count;
+    NSString *key = self.dataSource.allKeys[section];
+    NSArray *value = self.dataSource[key];
+    return value.count;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = RGBCOLOR(220, 220, 220);
+    label.textColor = [UIColor grayColor];
+    label.text =  self.dataSource.allKeys[section];
+    return label;
+}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return self.dataSource.allKeys[section];
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"left";
@@ -98,20 +121,22 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    NSDictionary *controllerDic = self.dataSource[indexPath.row];
+    NSString *key = self.dataSource.allKeys[indexPath.section];
+    NSArray *value = self.dataSource[key];
+    
     cell.textLabel.textColor=  [UIColor grayColor];
     cell.textLabel.font = [UIFont systemFontOfSize:16];
-    cell.textLabel.text = controllerDic[kViewControllerTitle];
+    NSDictionary *dic = value[indexPath.row];
+    
+    cell.textLabel.text = dic[@"Name"];
 
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(YYLeftViewController:didSelectIndexPath:withController:)]) {
-        NSDictionary *controllerDic = self.dataSource[indexPath.row];
-        UIViewController *controller = controllerDic[kViewController];
-        [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath withController:controller];
+    if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(YYLeftViewController:didSelectIndexPath:)]) {
+       [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath];
     }
 }
 - (void)didReceiveMemoryWarning

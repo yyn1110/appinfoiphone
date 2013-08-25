@@ -21,10 +21,11 @@
     UINavigationController *leftNav = [[UINavigationController alloc] initWithRootViewController:left];
     YYRightViewController *right = [[YYRightViewController alloc] init];
     UINavigationController *rightNav = [[UINavigationController alloc] initWithRootViewController:right];
-    
+    YYBestViewController *best = [[YYBestViewController alloc] init];
+    best.title = @"精品推荐";
+    UINavigationController *bestNav = [[UINavigationController alloc] initWithRootViewController:best];
 
-    NSDictionary *dic = left.dataSource[0];
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:dic[kViewController] leftDrawerViewController:leftNav rightDrawerViewController:rightNav];
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:bestNav leftDrawerViewController:leftNav rightDrawerViewController:rightNav];
     self.drawerController.showsShadow = YES;
     self.drawerController.shouldStretchDrawer = NO;
     [self.drawerController setMaximumLeftDrawerWidth:150];
@@ -33,11 +34,16 @@
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
    
     self.window.rootViewController = self.drawerController;
+
+    
+    
     return YES;
 }
-- (void)YYLeftViewController:(YYLeftViewController *)left didSelectIndexPath:(NSIndexPath *)path withController:(UIViewController *)controller;
+
+- (void)YYLeftViewController:(YYLeftViewController *)left didSelectIndexPath:(NSIndexPath *)path;
 {
-    [self.drawerController setCenterViewController:controller withCloseAnimation:YES completion:^(BOOL finished) {
+
+    [self.drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {
         
     }];
 }

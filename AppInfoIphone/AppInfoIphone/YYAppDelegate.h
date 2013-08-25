@@ -11,7 +11,9 @@
 #import "YYRightViewController.h"
 
 #import "MMDrawerController.h"
-
+#import "ASIHTTPRequest.h"
+#import "MobClick.h"
+#import "YYBestViewController.h"
 @interface YYAppDelegate : UIResponder <UIApplicationDelegate,YYLeftViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

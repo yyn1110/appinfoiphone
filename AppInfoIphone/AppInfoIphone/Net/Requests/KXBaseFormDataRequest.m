@@ -17,6 +17,8 @@
         [self setDefaultResponseEncoding:NSUTF8StringEncoding];
         [self setTimeOutSeconds:10];
         [self addRequestHeader:@"Accept" value:@"text/json"];
+        
+        
         self.deviceInfo = [NSMutableDictionary dictionaryWithCapacity:2];
         NSString *curVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
         float version = [curVersion floatValue];
@@ -52,26 +54,25 @@
       //  [KXBaseFormDataRequest showError:@"网络异常,请检查网络。"];
     }
 }
-- (id)parseJson
+- (id)parseJson:(HttpResponseBaseEntity *)entity
 {
     NSData *responseData = [self responseData];
     NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    DLog(@"httpResponseStr:%@",responseStr);
-    NSDictionary *responseString = [responseStr objectFromJSONString];
-    DLog(@"httpResponseDic:%@",responseString);
-    if (responseString) {
-        NSDictionary *responseInfo = [responseString objectForKey:@"ResponseInfo"];
-        self.errorInfo = [[HttpResponseBaseEntity alloc] init];
-        self.errorInfo.resultCode = [[responseInfo objectForKey:@"result"] intValue];
-        self.errorInfo.msg = [responseInfo objectForKey:@"msg"];
-        return responseInfo;
+    DLog(@"httpResponseStr:%@\n",responseStr);
+    NSDictionary *responseInfo = [responseStr objectFromJSONString];
+    DLog(@"httpResponseDic:%@\n",responseInfo);
+    if (responseInfo) {
+        entity.resultCode = [[responseInfo objectForKey:@"ResultCode"] intValue];
+        entity.msg = [responseInfo objectForKey:@"Msg"];
+        entity.responseInfo = responseInfo;
+        return entity;
     } else {
-        self.errorInfo = [[HttpResponseBaseEntity alloc] init];
-        self.errorInfo.resultCode = -1000;
-        self.errorInfo.msg = @"服务器异常！";
+        
+        entity.resultCode = -1000;
+        entity.msg = @"服务器异常！";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"服务器异常" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
-        return NULL;
+        return nil;
     }
     return nil;
 

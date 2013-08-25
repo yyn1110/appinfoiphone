@@ -12,9 +12,9 @@
 #import "JSONKit.h"
 #import "UIDevice-Hardware.h"
 #import "KXNotifications.h"
+#import "DataManager.h"
 @interface KXBaseFormDataRequest : ASIFormDataRequest
-@property (nonatomic,retain) HttpResponseBaseEntity *errorInfo;
 @property (nonatomic,strong) NSMutableDictionary *deviceInfo;
 
-- (id)parseJson;
+- (id)parseJson:(HttpResponseBaseEntity *)entity;
 @end

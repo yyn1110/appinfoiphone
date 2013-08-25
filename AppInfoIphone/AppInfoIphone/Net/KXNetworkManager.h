@@ -12,10 +12,10 @@
 @class KXBaseEntity;
 #import "KXNotifications.h"
 #import "KXBaseRequest.h"
-
+#import "YYRoomListRequest.h"
 @interface KXNetworkManager : NSObject
 
 + (KXNetworkManager *)sharedKXNetworkManager;
-
+- (void)requestWithUID:(NSNumber *)uid;
 
 @end

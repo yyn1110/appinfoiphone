@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YYBangViewController.h"
-#import "YYBestViewController.h"
 
+
+#import "KXNetworkManager.h"
+#import <QuartzCore/QuartzCore.h>
 extern NSString * const kViewController;
 extern NSString * const kViewControllerTitle;
 @protocol YYLeftViewControllerDelegate;
 @interface YYLeftViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,assign) id<YYLeftViewControllerDelegate> delegate;
-@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) NSDictionary *dataSource;
 @end
 @protocol YYLeftViewControllerDelegate <NSObject>
-- (void)YYLeftViewController:(YYLeftViewController *)left didSelectIndexPath:(NSIndexPath *)path withController:(UIViewController *)controller;
+- (void)YYLeftViewController:(YYLeftViewController *)left didSelectIndexPath:(NSIndexPath *)path;
 @end

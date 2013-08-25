@@ -9,3 +9,4 @@
 NSString * const KXNetworkManagerDidFailLoginNotification =
 @"KXNetworkManagerDidFailLoginNotification";
 NSString * const KXNetworkManagerDidFailWithErrorNotification = @"KXNetworkManagerDidFailWithErrorNotification";
+NSString * const KXRoomListNotification = @"KXRoomListNotification";

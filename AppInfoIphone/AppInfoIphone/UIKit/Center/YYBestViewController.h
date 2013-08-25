@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KXNetworkManager.h"
 @interface YYBestViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 
 
