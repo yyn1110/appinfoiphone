@@ -11,6 +11,7 @@
 
 #import "KXNetworkManager.h"
 #import <QuartzCore/QuartzCore.h>
+#import "YYLeftViewCell.h"
 extern NSString * const kViewController;
 extern NSString * const kViewControllerTitle;
 @protocol YYLeftViewControllerDelegate;

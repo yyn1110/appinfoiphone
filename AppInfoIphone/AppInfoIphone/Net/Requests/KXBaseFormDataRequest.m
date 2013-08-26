@@ -63,13 +63,13 @@
     DLog(@"httpResponseDic:%@\n",responseInfo);
     if (responseInfo) {
         entity.resultCode = [[responseInfo objectForKey:@"ResultCode"] intValue];
-        entity.msg = [responseInfo objectForKey:@"Msg"];
+        entity.ResultMsg = [responseInfo objectForKey:@"Msg"];
         entity.responseInfo = responseInfo;
         return entity;
     } else {
         
         entity.resultCode = -1000;
-        entity.msg = @"服务器异常！";
+        entity.ResultMsg = @"服务器异常！";
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"服务器异常" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         return nil;

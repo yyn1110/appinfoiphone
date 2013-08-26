@@ -27,68 +27,62 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
 {
     self = [super init];
     if (self) {
-
-      //  self.dataSource = [NSDictionary dictionary];
-
     }
     return self;
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 
--(void)handleData
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"hh:mm:ss"];
-    NSString *lastUpdated = [NSString stringWithFormat:@"上次更新 %@", [formatter stringFromDate:[NSDate date]]];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];    
-    [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
-}
--(void)refreshView:(UIRefreshControl *)refresh
-{
-    if (refresh.refreshing) {
-        refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"刷新中..."];
-          [[KXNetworkManager sharedKXNetworkManager] requestWithUID:@(100)]; 
-       // [self performSelector:@selector(handleData) withObject:nil afterDelay:2];
-    }
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:NO];
-    self.navigationController.navigationBar.tintColor = RGBCOLOR(230, 230, 230);
+    self.navigationController.navigationBar.tintColor = RGBCOLOR(61, 89, 171);
     self.view.backgroundColor = RGBCOLOR(230, 230, 230);
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
-    titleLabel.text = @"设置";
+    titleLabel.text = @"答案导航";
     titleLabel.font = [UIFont systemFontOfSize:20];
-    titleLabel.textColor = [UIColor grayColor];
+    titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleLabel;
-    
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.tintColor = [UIColor lightGrayColor];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"] ;
-    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RoomList:) name:KXRoomListNotification object:nil];
-      [[KXNetworkManager sharedKXNetworkManager] requestWithUID:@(100)];
-	// Do any additional setup after loading the view.
+
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RoomList:) name:KXRoomListNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CheckUpdate:) name:KXCheckUpdateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(RequestError:) name:KXNetworkManagerDidFailWithErrorNotification object:nil];
+    [[KXNetworkManager sharedKXNetworkManager] requestCheckUpdate];
+    [[KXNetworkManager sharedKXNetworkManager] requestWithUID:@(100)];
+}
+- (void)RequestError:(NSNotification *)notification
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"连接失败,请检查网络." delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+    [alert show];
+}
+- (void)CheckUpdate:(NSNotification *)notification
+{
+    CheckUpdateEntity *entity = notification.object;
+    if (entity.resultCode == 1 && [entity.isUpdate boolValue]) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"更新提示" message:entity.msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    });
+    }
 }
 - (void)RoomList:(NSNotification *)notification
 {
     RoomListEntity *entity = notification.object;
     if (entity.resultCode == 1) {
-        
         self.dataSource = entity.Results;
-      //  [self.tableView reloadData];
-        [self performSelector:@selector(handleData) withObject:nil afterDelay:1];
+        [self.tableView reloadData];
     }
-    
-    
+
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-  return   self.dataSource.allKeys.count;
+    return self.dataSource.allKeys.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -100,44 +94,67 @@ NSString * const kViewControllerTitle = @"kViewControllerTitle";
 {
     return 30;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UILabel *label = [[UILabel alloc] init];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.backgroundColor = RGBCOLOR(220, 220, 220);
-    label.textColor = [UIColor grayColor];
-    label.text =  self.dataSource.allKeys[section];
+    label.textAlignment = NSTextAlignmentLeft;
+    label.backgroundColor = RGBCOLOR(51, 161, 201);
+    label.textColor = RGBCOLOR(41, 36, 33);
+    label.font = [UIFont boldSystemFontOfSize:17];
+    label.text = [NSString stringWithFormat:@" %@",self.dataSource.allKeys[section]]; 
     return label;
 }
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    return self.dataSource.allKeys[section];
-//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"left";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
+    YYLeftViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier ];
     if (cell==nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[YYLeftViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     NSString *key = self.dataSource.allKeys[indexPath.section];
     NSArray *value = self.dataSource[key];
     
-    cell.textLabel.textColor=  [UIColor grayColor];
+    cell.textLabel.textColor=  RGBCOLOR(128, 42, 42);
     cell.textLabel.font = [UIFont systemFontOfSize:16];
-    NSDictionary *dic = value[indexPath.row];
     
-    cell.textLabel.text = dic[@"Name"];
-
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+    cell.detailTextLabel.numberOfLines = 0;
+    BookInfoEntity *entity = value[indexPath.row];
+    
+    cell.textLabel.text = entity.BookName;
+    NSString *bookinfo = entity.BookIntr;
+    if ([bookinfo isEqualToString:@""] || bookinfo==nil) {
+        cell.detailTextLabel.text = @"待上线";
+        cell.detailTextLabel.textColor=   RGBCOLOR(163, 148, 128);
+    }else{
+        cell.detailTextLabel.text = bookinfo;
+        cell.detailTextLabel.textColor=  RGBCOLOR(178, 34, 34);
+    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(YYLeftViewController:didSelectIndexPath:)]) {
-       [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath];
+        NSString *key = self.dataSource.allKeys[indexPath.section];
+        NSArray *value = self.dataSource[key];
+        BookInfoEntity *entity = value[indexPath.row];
+        NSString *bookinfo = entity.BookIntr;
+        if ([bookinfo isEqualToString:@""] || bookinfo==nil) {
+        }else{
+            [self.delegate YYLeftViewController:self didSelectIndexPath:indexPath];
+        }
+       
     }
+}
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return self.dataSource.allKeys;
 }
 - (void)didReceiveMemoryWarning
 {

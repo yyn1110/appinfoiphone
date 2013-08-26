@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface HttpResponseBaseEntity : NSObject
-@property (nonatomic,strong) NSString *msg;
+@property (nonatomic,strong) NSString *ResultMsg;
 @property (nonatomic,assign) int resultCode;
 @property (nonatomic,strong) NSDictionary *responseInfo;
 @end

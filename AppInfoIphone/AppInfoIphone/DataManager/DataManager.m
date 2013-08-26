@@ -23,7 +23,7 @@ static DataManager *manager;
 {
     self = [super init];
     if (self) {
-        self.kServerURL = @"http://localhost:8080";
+        self.kServerURL = @"http://192.168.20.106:8080";
     }
     return self;
 }

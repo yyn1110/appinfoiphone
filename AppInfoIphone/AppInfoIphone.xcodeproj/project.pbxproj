@@ -58,6 +58,21 @@
 		0CCB3F1F17C744C60000D7A0 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F1517C744C60000D7A0 /* UIView+Screenshot.m */; };
 		0CCB3F2517C7450D0000D7A0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F2317C7450D0000D7A0 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0CCB3F2817C749E90000D7A0 /* YYRoomListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */; };
+		0CCB7C1D17CB196D00788FC9 /* YYLeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C1C17CB196D00788FC9 /* YYLeftViewCell.m */; };
+		0CCB7C2017CB546B00788FC9 /* YYCheckUpdateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C1F17CB546B00788FC9 /* YYCheckUpdateRequest.m */; };
+		0CCB7C2317CB54FB00788FC9 /* CheckUpdateEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2217CB54FB00788FC9 /* CheckUpdateEntity.m */; };
+		0CCB7C2F17CB712300788FC9 /* set_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2917CB712300788FC9 /* set_account.png */; };
+		0CCB7C3017CB712300788FC9 /* set_account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2A17CB712300788FC9 /* set_account@2x.png */; };
+		0CCB7C3117CB712300788FC9 /* set_lib.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2B17CB712300788FC9 /* set_lib.png */; };
+		0CCB7C3217CB712300788FC9 /* set_lib@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2C17CB712300788FC9 /* set_lib@2x.png */; };
+		0CCB7C3317CB712300788FC9 /* set_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2D17CB712300788FC9 /* set_setting.png */; };
+		0CCB7C3417CB712300788FC9 /* set_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CCB7C2E17CB712300788FC9 /* set_setting@2x.png */; };
+		0CCB7C3717CB71BA00788FC9 /* YYRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C3617CB71BA00788FC9 /* YYRightCell.m */; };
+		0CCB7C3B17CB77BA00788FC9 /* YYAccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C3A17CB77BA00788FC9 /* YYAccountController.m */; };
+		0CCB7C3E17CB780400788FC9 /* YYTimeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C3D17CB780400788FC9 /* YYTimeTableController.m */; };
+		0CCB7C4117CB782500788FC9 /* YYGetAnswerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C4017CB782500788FC9 /* YYGetAnswerController.m */; };
+		0CCB7C4417CB7A9000788FC9 /* YYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C4317CB7A8F00788FC9 /* YYBaseViewController.m */; };
+		0CCB7C4717CB7C8D00788FC9 /* YYAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB7C4617CB7C8D00788FC9 /* YYAboutController.m */; };
 		2FE42B0E17C8E5200042C3DD /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE42B0D17C8E5200042C3DD /* DataManager.m */; };
 		2FE42B1117C904F30042C3DD /* RoomListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE42B1017C904F30042C3DD /* RoomListEntity.m */; };
 		2FE42B1517CA02790042C3DD /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE42B1317CA02790042C3DD /* libMobClickLibrary.a */; };
@@ -160,6 +175,30 @@
 		0CCB3F2417C7450D0000D7A0 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		0CCB3F2617C749E80000D7A0 /* YYRoomListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRoomListRequest.h; sourceTree = "<group>"; };
 		0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRoomListRequest.m; sourceTree = "<group>"; };
+		0CCB7C1B17CB196D00788FC9 /* YYLeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYLeftViewCell.h; sourceTree = "<group>"; };
+		0CCB7C1C17CB196D00788FC9 /* YYLeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYLeftViewCell.m; sourceTree = "<group>"; };
+		0CCB7C1E17CB546B00788FC9 /* YYCheckUpdateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCheckUpdateRequest.h; sourceTree = "<group>"; };
+		0CCB7C1F17CB546B00788FC9 /* YYCheckUpdateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCheckUpdateRequest.m; sourceTree = "<group>"; };
+		0CCB7C2117CB54FB00788FC9 /* CheckUpdateEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckUpdateEntity.h; sourceTree = "<group>"; };
+		0CCB7C2217CB54FB00788FC9 /* CheckUpdateEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckUpdateEntity.m; sourceTree = "<group>"; };
+		0CCB7C2917CB712300788FC9 /* set_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_account.png; sourceTree = "<group>"; };
+		0CCB7C2A17CB712300788FC9 /* set_account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_account@2x.png"; sourceTree = "<group>"; };
+		0CCB7C2B17CB712300788FC9 /* set_lib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_lib.png; sourceTree = "<group>"; };
+		0CCB7C2C17CB712300788FC9 /* set_lib@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_lib@2x.png"; sourceTree = "<group>"; };
+		0CCB7C2D17CB712300788FC9 /* set_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set_setting.png; sourceTree = "<group>"; };
+		0CCB7C2E17CB712300788FC9 /* set_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "set_setting@2x.png"; sourceTree = "<group>"; };
+		0CCB7C3517CB71BA00788FC9 /* YYRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRightCell.h; sourceTree = "<group>"; };
+		0CCB7C3617CB71BA00788FC9 /* YYRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRightCell.m; sourceTree = "<group>"; };
+		0CCB7C3917CB77BA00788FC9 /* YYAccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAccountController.h; sourceTree = "<group>"; };
+		0CCB7C3A17CB77BA00788FC9 /* YYAccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAccountController.m; sourceTree = "<group>"; };
+		0CCB7C3C17CB780400788FC9 /* YYTimeTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTimeTableController.h; sourceTree = "<group>"; };
+		0CCB7C3D17CB780400788FC9 /* YYTimeTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTimeTableController.m; sourceTree = "<group>"; };
+		0CCB7C3F17CB782500788FC9 /* YYGetAnswerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYGetAnswerController.h; sourceTree = "<group>"; };
+		0CCB7C4017CB782500788FC9 /* YYGetAnswerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYGetAnswerController.m; sourceTree = "<group>"; };
+		0CCB7C4217CB7A8E00788FC9 /* YYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYBaseViewController.h; sourceTree = "<group>"; };
+		0CCB7C4317CB7A8F00788FC9 /* YYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYBaseViewController.m; sourceTree = "<group>"; };
+		0CCB7C4517CB7C8C00788FC9 /* YYAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAboutController.h; sourceTree = "<group>"; };
+		0CCB7C4617CB7C8D00788FC9 /* YYAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAboutController.m; sourceTree = "<group>"; };
 		2FE42B0C17C8E5200042C3DD /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		2FE42B0D17C8E5200042C3DD /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		2FE42B0F17C904F30042C3DD /* RoomListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListEntity.h; sourceTree = "<group>"; };
@@ -193,6 +232,7 @@
 		0CCB3E4117C708E80000D7A0 = {
 			isa = PBXGroup;
 			children = (
+				0CCB7C2417CB6E0D00788FC9 /* Resource */,
 				0CCB3E6A17C70C490000D7A0 /* Externals */,
 				0CCB3E5317C708E80000D7A0 /* AppInfoIphone */,
 				0CCB3E4C17C708E80000D7A0 /* Frameworks */,
@@ -234,6 +274,8 @@
 				0CCB3E5C17C708E80000D7A0 /* YYAppDelegate.h */,
 				0CCB3E5D17C708E80000D7A0 /* YYAppDelegate.m */,
 				0CCB3E5417C708E80000D7A0 /* Supporting Files */,
+				0CCB7C4217CB7A8E00788FC9 /* YYBaseViewController.h */,
+				0CCB7C4317CB7A8F00788FC9 /* YYBaseViewController.m */,
 			);
 			path = AppInfoIphone;
 			sourceTree = "<group>";
@@ -368,6 +410,8 @@
 			children = (
 				0CCB3EE017C7419C0000D7A0 /* YYLeftViewController.h */,
 				0CCB3EE117C7419C0000D7A0 /* YYLeftViewController.m */,
+				0CCB7C1B17CB196D00788FC9 /* YYLeftViewCell.h */,
+				0CCB7C1C17CB196D00788FC9 /* YYLeftViewCell.m */,
 			);
 			path = Left;
 			sourceTree = "<group>";
@@ -375,8 +419,11 @@
 		0CCB3EE217C7419C0000D7A0 /* Right */ = {
 			isa = PBXGroup;
 			children = (
+				0CCB7C3817CB777B00788FC9 /* set */,
 				0CCB3EE317C7419C0000D7A0 /* YYRightViewController.h */,
 				0CCB3EE417C7419C0000D7A0 /* YYRightViewController.m */,
+				0CCB7C3517CB71BA00788FC9 /* YYRightCell.h */,
+				0CCB7C3617CB71BA00788FC9 /* YYRightCell.m */,
 			);
 			path = Right;
 			sourceTree = "<group>";
@@ -390,6 +437,8 @@
 				0CCB3EF617C7429F0000D7A0 /* KXBaseRequest.m */,
 				0CCB3F2617C749E80000D7A0 /* YYRoomListRequest.h */,
 				0CCB3F2717C749E90000D7A0 /* YYRoomListRequest.m */,
+				0CCB7C1E17CB546B00788FC9 /* YYCheckUpdateRequest.h */,
+				0CCB7C1F17CB546B00788FC9 /* YYCheckUpdateRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -410,6 +459,8 @@
 				0CCB3EFF17C744140000D7A0 /* HttpResponseBaseEntity.m */,
 				2FE42B0F17C904F30042C3DD /* RoomListEntity.h */,
 				2FE42B1017C904F30042C3DD /* RoomListEntity.m */,
+				0CCB7C2117CB54FB00788FC9 /* CheckUpdateEntity.h */,
+				0CCB7C2217CB54FB00788FC9 /* CheckUpdateEntity.m */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -454,6 +505,34 @@
 				0CCB3F2417C7450D0000D7A0 /* GTMDefines.h */,
 			);
 			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		0CCB7C2417CB6E0D00788FC9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB7C2917CB712300788FC9 /* set_account.png */,
+				0CCB7C2A17CB712300788FC9 /* set_account@2x.png */,
+				0CCB7C2B17CB712300788FC9 /* set_lib.png */,
+				0CCB7C2C17CB712300788FC9 /* set_lib@2x.png */,
+				0CCB7C2D17CB712300788FC9 /* set_setting.png */,
+				0CCB7C2E17CB712300788FC9 /* set_setting@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0CCB7C3817CB777B00788FC9 /* set */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB7C3917CB77BA00788FC9 /* YYAccountController.h */,
+				0CCB7C3A17CB77BA00788FC9 /* YYAccountController.m */,
+				0CCB7C3C17CB780400788FC9 /* YYTimeTableController.h */,
+				0CCB7C3D17CB780400788FC9 /* YYTimeTableController.m */,
+				0CCB7C3F17CB782500788FC9 /* YYGetAnswerController.h */,
+				0CCB7C4017CB782500788FC9 /* YYGetAnswerController.m */,
+				0CCB7C4517CB7C8C00788FC9 /* YYAboutController.h */,
+				0CCB7C4617CB7C8D00788FC9 /* YYAboutController.m */,
+			);
+			path = set;
 			sourceTree = "<group>";
 		};
 		2FE42B0B17C8E50E0042C3DD /* DataManager */ = {
@@ -530,6 +609,12 @@
 				0CCB3E6017C708E80000D7A0 /* Default.png in Resources */,
 				0CCB3E6217C708E80000D7A0 /* Default@2x.png in Resources */,
 				0CCB3E6417C708E80000D7A0 /* Default-568h@2x.png in Resources */,
+				0CCB7C2F17CB712300788FC9 /* set_account.png in Resources */,
+				0CCB7C3017CB712300788FC9 /* set_account@2x.png in Resources */,
+				0CCB7C3117CB712300788FC9 /* set_lib.png in Resources */,
+				0CCB7C3217CB712300788FC9 /* set_lib@2x.png in Resources */,
+				0CCB7C3317CB712300788FC9 /* set_setting.png in Resources */,
+				0CCB7C3417CB712300788FC9 /* set_setting@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +664,15 @@
 				0CCB3F2817C749E90000D7A0 /* YYRoomListRequest.m in Sources */,
 				2FE42B0E17C8E5200042C3DD /* DataManager.m in Sources */,
 				2FE42B1117C904F30042C3DD /* RoomListEntity.m in Sources */,
+				0CCB7C1D17CB196D00788FC9 /* YYLeftViewCell.m in Sources */,
+				0CCB7C2017CB546B00788FC9 /* YYCheckUpdateRequest.m in Sources */,
+				0CCB7C2317CB54FB00788FC9 /* CheckUpdateEntity.m in Sources */,
+				0CCB7C3717CB71BA00788FC9 /* YYRightCell.m in Sources */,
+				0CCB7C3B17CB77BA00788FC9 /* YYAccountController.m in Sources */,
+				0CCB7C3E17CB780400788FC9 /* YYTimeTableController.m in Sources */,
+				0CCB7C4117CB782500788FC9 /* YYGetAnswerController.m in Sources */,
+				0CCB7C4417CB7A9000788FC9 /* YYBaseViewController.m in Sources */,
+				0CCB7C4717CB7C8D00788FC9 /* YYAboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +752,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppInfoIphone/AppInfoIphone-Prefix.pch";
 				INFOPLIST_FILE = "AppInfoIphone/AppInfoIphone-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
@@ -675,7 +769,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppInfoIphone/AppInfoIphone-Prefix.pch";
 				INFOPLIST_FILE = "AppInfoIphone/AppInfoIphone-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",

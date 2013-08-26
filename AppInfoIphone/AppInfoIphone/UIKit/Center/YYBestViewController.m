@@ -22,42 +22,21 @@
     }
     return self;
 }
--(void)handleData
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"hh:mm:ss"];
-    NSString *lastUpdated = [NSString stringWithFormat:@"上次更新 %@", [formatter stringFromDate:[NSDate date]]];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
-    [self.refreshControl endRefreshing];
-    [self.tableView reloadData];
-}
--(void)refreshView:(UIRefreshControl *)refresh
-{
-    if (refresh.refreshing) {
-        refresh.attributedTitle = [[NSAttributedString alloc]initWithString:@"刷新中..."];
 
-    }
-}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setHidden:NO];
-    self.navigationController.navigationBar.tintColor = RGBCOLOR(230, 230, 230);
+    self.navigationController.navigationBar.tintColor = RGBCOLOR(61, 89, 171);
     self.view.backgroundColor = RGBCOLOR(230, 230, 230);
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
     titleLabel.text = self.title;
     titleLabel.font = [UIFont systemFontOfSize:20];
-    titleLabel.textColor = [UIColor grayColor];
+    titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = [UIColor clearColor];
     self.navigationItem.titleView = titleLabel;
-
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.tintColor = [UIColor lightGrayColor];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"] ;
-    [refresh addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
 
 
 }

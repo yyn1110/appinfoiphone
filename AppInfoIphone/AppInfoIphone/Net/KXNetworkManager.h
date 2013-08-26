@@ -13,9 +13,10 @@
 #import "KXNotifications.h"
 #import "KXBaseRequest.h"
 #import "YYRoomListRequest.h"
+#import "YYCheckUpdateRequest.h"
 @interface KXNetworkManager : NSObject
 
 + (KXNetworkManager *)sharedKXNetworkManager;
 - (void)requestWithUID:(NSNumber *)uid;
-
+- (void)requestCheckUpdate;
 @end

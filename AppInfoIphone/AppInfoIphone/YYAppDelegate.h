@@ -14,10 +14,10 @@
 #import "ASIHTTPRequest.h"
 #import "MobClick.h"
 #import "YYBestViewController.h"
-@interface YYAppDelegate : UIResponder <UIApplicationDelegate,YYLeftViewControllerDelegate>
+@interface YYAppDelegate : UIResponder <UIApplicationDelegate,YYLeftViewControllerDelegate,YYRightViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) MMDrawerController *drawerController;
-
+@property (strong, nonatomic) UINavigationController *indexNav;
 
 @end

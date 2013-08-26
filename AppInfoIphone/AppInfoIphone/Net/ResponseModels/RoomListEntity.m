@@ -7,7 +7,9 @@
 //
 
 #import "RoomListEntity.h"
+@implementation BookInfoEntity
 
+@end
 @implementation RoomListEntity
 
 @end

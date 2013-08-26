@@ -117,6 +117,10 @@ DLog(@" requestWentWrong = %@",request.responseString);
     [self.networkQueue addOperation:request];
 }
 
-
+- (void)requestCheckUpdate
+{
+    id request = [YYCheckUpdateRequest requestCheckUpdate];
+    [self.networkQueue addOperation:request];
+}
 
 @end

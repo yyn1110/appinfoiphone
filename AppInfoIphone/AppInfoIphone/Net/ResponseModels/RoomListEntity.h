@@ -7,7 +7,11 @@
 //
 
 #import "HttpResponseBaseEntity.h"
-
+@interface BookInfoEntity : NSObject
+@property (nonatomic,strong) NSNumber *BookID;
+@property (nonatomic,strong) NSString *BookIntr;
+@property (nonatomic,strong) NSString *BookName;
+@end
 @interface RoomListEntity : HttpResponseBaseEntity
 @property (nonatomic,strong) NSDictionary *Results;
 @end

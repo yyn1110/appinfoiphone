@@ -13,7 +13,7 @@
 {
     self = [super init];
     if (self) {
-        self.msg = @"";
+        self.ResultMsg = @"";
         self.resultCode = -1000;
     }
     return self;
